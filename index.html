@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Dernier Geste | LDG Conseil</title>
+    <meta name="description" content="Gouvernance Agile & Pilotage de Projets IA. La précision chirurgicale du delivery.">
+    
+    <!-- Intégration de Tailwind CSS pour un styling rapide et sans fichier externe -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Typographie : Inter (très clean, très tech) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
+    
+    <!-- Configuration Tailwind pour l'ambiance sombre -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#050505',
+                        light: '#f5f5f5',
+                        accent: '#888888'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- CSS personnalisé pour des animations d'apparition très douces (premium) -->
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #050505; 
+            color: #f5f5f5; 
+        }
+        .fade-in { 
+            animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
+            opacity: 0; 
+        }
+        .delay-1 { animation-delay: 0.3s; }
+        .delay-2 { animation-delay: 0.6s; }
+        .delay-3 { animation-delay: 0.9s; }
+        
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(15px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-6 text-center antialiased selection:bg-white selection:text-black">
+    
+    <!-- Conteneur principal -->
+    <div class="max-w-3xl w-full flex flex-col items-center">
+        
+        <!-- En-tête / Trigramme -->
+        <div class="fade-in tracking-[0.4em] text-xs md:text-sm font-semibold text-zinc-500 uppercase mb-12">
+            LDG Conseil
+        </div>
+
+        <!-- Titre principal -->
+        <div class="space-y-4 fade-in delay-1 w-full">
+            <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white uppercase leading-none">
+                Le Dernier<br/>Geste.
+            </h1>
+            <p class="text-lg md:text-2xl font-light text-zinc-400 mt-6 tracking-wide">
+                Gouvernance Agile & Pilotage de Projets IA.
+            </p>
+        </div>
+
+        <!-- Le Pitch / Storytelling -->
+        <div class="fade-in delay-2 mt-16 border-t border-zinc-800 pt-12 w-full">
+            <p class="text-base md:text-lg font-light leading-relaxed text-zinc-400 max-w-2xl mx-auto text-justify md:text-center">
+                Dans les projets tech et IA, beaucoup savent lancer des idées, mais très peu savent conclure. <strong class="text-white font-semibold">Le Dernier Geste</strong>, c'est la précision chirurgicale du delivery : le réglage mécanique final, la rigueur de la gouvernance, et l'action décisive qui transforme un projet complexe en une réalité performante.
+            </p>
+        </div>
+
+        <!-- Call to Action / Statut -->
+        <div class="fade-in delay-3 mt-16 pb-8">
+            <div class="flex flex-col items-center gap-6">
+                <span class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-zinc-600">
+                    <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                    Architecture en cours
+                </span>
+                
+                <!-- Remplace "ton.email@domaine.com" par ton adresse ou ton lien LinkedIn -->
+                <a href="mailto:contact@votredomaine.com" 
+                   class="inline-block border border-zinc-700 hover:border-white hover:bg-white hover:text-black transition-all duration-500 px-8 py-3 text-sm tracking-wider uppercase font-semibold">
+                    Me contacter
+                </a>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>
