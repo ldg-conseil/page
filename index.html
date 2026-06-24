@@ -1,103 +1,192 @@
 <!DOCTYPE html>
-<html lang="fr" class="dark">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Dernier Geste | LDG Conseil</title>
-    <meta name="description" content="Gouvernance Agile & Pilotage de Projets IA. La précision chirurgicale du delivery.">
+    <title>Le Dernier Geste | Gouvernance Agile & Pilotage IA</title>
+    <meta name="description" content="Directeur de Projet Tech & IA Senior. L'expertise hybride pour un delivery chirurgical, de l'architecture au CODIR.">
     
-    <!-- Intégration de Tailwind CSS pour un styling rapide et sans fichier externe -->
+    <!-- Tailwind CSS (CDN pour stratégie $0) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Typographie : Inter (très clean, très tech) -->
+    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Configuration Tailwind pour l'ambiance sombre -->
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        dark: '#050505',
-                        light: '#f5f5f5',
-                        accent: '#888888'
+                        black: '#0a0a0a',
+                        dark: '#121212',
+                        gray: {
+                            400: '#a3a3a3',
+                            300: '#d4d4d4',
+                        }
                     }
                 }
             }
         }
     </script>
-    
-    <!-- CSS personnalisé pour des animations d'apparition très douces (premium) -->
     <style>
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #050505; 
-            color: #f5f5f5; 
+        body {
+            background-color: #0a0a0a;
+            color: #d4d4d4;
         }
-        .fade-in { 
-            animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
-            opacity: 0; 
+        /* Style d'accentuation minimaliste (bordure blanche stricte) */
+        .border-accent {
+            border-left: 2px solid #ffffff;
         }
-        .delay-1 { animation-delay: 0.3s; }
-        .delay-2 { animation-delay: 0.6s; }
-        .delay-3 { animation-delay: 0.9s; }
-        
-        @keyframes fadeIn { 
-            from { opacity: 0; transform: translateY(15px); } 
-            to { opacity: 1; transform: translateY(0); } 
+        /* Retirer l'autofill background de Chrome */
+        input:-webkit-autofill,
+        textarea:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 30px #121212 inset !important;
+            -webkit-text-fill-color: white !important;
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center p-6 text-center antialiased selection:bg-white selection:text-black">
-    
-    <!-- Conteneur principal -->
-    <div class="max-w-3xl w-full flex flex-col items-center">
-        
-        <!-- En-tête / Trigramme -->
-        <div class="fade-in tracking-[0.4em] text-xs md:text-sm font-semibold text-zinc-500 uppercase mb-12">
-            LDG Conseil
-        </div>
+<body class="antialiased selection:bg-white selection:text-black">
 
-        <!-- Titre principal -->
-        <div class="space-y-4 fade-in delay-1 w-full">
-            <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white uppercase leading-none">
-                Le Dernier<br/>Geste.
-            </h1>
-            <p class="text-lg md:text-2xl font-light text-zinc-400 mt-6 tracking-wide">
-                Gouvernance Agile & Pilotage de Projets IA.
-            </p>
-        </div>
-
-        <!-- Le Pitch / Storytelling -->
-        <div class="fade-in delay-2 mt-16 border-t border-zinc-800 pt-12 w-full">
-            <p class="text-base md:text-lg font-light leading-relaxed text-zinc-400 max-w-2xl mx-auto text-justify md:text-center">
-                Dans les projets tech et IA, beaucoup savent lancer des idées, mais très peu savent conclure. <strong class="text-white font-semibold">Le Dernier Geste</strong>, c'est la précision chirurgicale du delivery : le réglage mécanique final, la rigueur de la gouvernance, et l'action décisive qui transforme un projet complexe en une réalité performante.
-            </p>
-        </div>
-
-        <!-- Call to Action / Statut -->
-        <div class="fade-in delay-3 mt-16 pb-8">
-            <div class="flex flex-col items-center gap-6">
-                <span class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-zinc-600">
-                    <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-                    Architecture en cours
-                </span>
-                
-                <!-- Remplace "ton.email@domaine.com" par ton adresse ou ton lien LinkedIn -->
-                <a href="mailto:contact@votredomaine.com" 
-                   class="inline-block border border-zinc-700 hover:border-white hover:bg-white hover:text-black transition-all duration-500 px-8 py-3 text-sm tracking-wider uppercase font-semibold">
-                    Me contacter
-                </a>
+    <!-- Navigation (Ultra-minimaliste) -->
+    <nav class="fixed w-full top-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-white font-bold tracking-tight text-lg">LDG Conseil.</span>
+            <div class="space-x-6 text-sm font-medium">
+                <a href="#philosophie" class="hover:text-white transition-colors">Philosophie</a>
+                <a href="#expertise" class="hover:text-white transition-colors">Expertise</a>
+                <a href="#contact" class="text-white hover:text-gray-300 transition-colors">Contact</a>
             </div>
         </div>
-        
-    </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex items-center pt-20">
+        <div class="max-w-5xl mx-auto px-6 w-full">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight tracking-tighter mb-6">
+                    L'architecture rencontre <br/> l'exécution.
+                </h1>
+                <p class="text-xl text-gray-400 font-light leading-relaxed mb-10 max-w-2xl">
+                    Gouvernance Agile & Pilotage de Projets IA. <br>
+                    Le Dernier Geste met fin à l'ingénierie théorique pour imposer un delivery implacable, du code source à la salle de conseil.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                    <a href="#contact" class="bg-white text-black px-8 py-4 font-semibold text-sm hover:bg-gray-200 transition-colors text-center">
+                        Initier un projet
+                    </a>
+                    <a href="#philosophie" class="border border-white/20 text-white px-8 py-4 font-semibold text-sm hover:bg-white/5 transition-colors text-center">
+                        Comprendre l'approche
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Philosophie Section -->
+    <section id="philosophie" class="py-32 bg-dark">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-start">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-6 border-accent pl-6">Rompre avec <br> le conseil traditionnel.</h2>
+                </div>
+                <div class="space-y-6 text-gray-400 font-light leading-relaxed">
+                    <p>
+                        La majorité des projets d'Intelligence Artificielle s'effondrent entre la preuve de concept et la mise en production. Le problème n'est pas la technologie, mais le manque de traduction entre la vision stratégique et la réalité technique.
+                    </p>
+                    <p>
+                        Le Dernier Geste incarne ce pivot. Un profil hybride capable de challenger une architecture cloud, de cadrer des agents IA, tout en assumant la rigueur budgétaire et la gouvernance exigées par un CODIR.
+                    </p>
+                    <p class="text-white font-medium">
+                        Pas de slides inutiles. De la mécanique de précision.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise / Offres Section -->
+    <section id="expertise" class="py-32 border-t border-white/10">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-white mb-16">Champs d'intervention</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Offre 1 -->
+                <div class="bg-dark p-8 border border-white/5 hover:border-white/20 transition-colors">
+                    <div class="text-white mb-4">01.</div>
+                    <h3 class="text-xl font-bold text-white mb-4">Cadrage & Architecture IA</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                        Analyse de faisabilité technique, sélection de la stack (LLMs, RAG, Agents) et définition de l'architecture cible. De l'idée à la roadmap d'ingénierie sécurisée.
+                    </p>
+                </div>
+
+                <!-- Offre 2 -->
+                <div class="bg-dark p-8 border border-white/5 hover:border-white/20 transition-colors">
+                    <div class="text-white mb-4">02.</div>
+                    <h3 class="text-xl font-bold text-white mb-4">Gouvernance & Delivery Agile</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                        Pilotage chirurgical d'équipes techniques complexes. Mise en place des rituels, verrouillage des sprints et garantie du delivery (Time/Quality/Budget).
+                    </p>
+                </div>
+
+                <!-- Offre 3 -->
+                <div class="bg-dark p-8 border border-white/5 hover:border-white/20 transition-colors">
+                    <div class="text-white mb-4">03.</div>
+                    <h3 class="text-xl font-bold text-white mb-4">Direction de Projet Intérimaire</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                        Prise en main de projets critiques ou en dérive. Alignement immédiat entre la DSI, les prestataires tech et le métier pour forcer l'atterrissage.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 bg-dark border-t border-white/10">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">Verrouiller un échange.</h2>
+                <p class="text-center text-gray-400 mb-12">Disponibilité, audit initial ou demande de TJM. Réponse sous 24h.</p>
+                
+                <!-- Remplacez l'action par l'URL de votre Formspree (ex: https://formspree.io/f/votreID) -->
+                <form action="https://formspree.io/f/placeholder" method="POST" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-xs font-medium text-gray-400 mb-2 uppercase tracking-wider">Nom / Entité</label>
+                            <input type="text" name="name" id="name" required class="w-full bg-black border border-white/10 text-white px-4 py-3 focus:outline-none focus:border-white transition-colors">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-xs font-medium text-gray-400 mb-2 uppercase tracking-wider">Email professionnel</label>
+                            <input type="email" name="email" id="email" required class="w-full bg-black border border-white/10 text-white px-4 py-3 focus:outline-none focus:border-white transition-colors">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-xs font-medium text-gray-400 mb-2 uppercase tracking-wider">Contexte & Objectifs</label>
+                        <textarea name="message" id="message" rows="4" required class="w-full bg-black border border-white/10 text-white px-4 py-3 focus:outline-none focus:border-white transition-colors resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-white text-black font-bold py-4 hover:bg-gray-200 transition-colors">
+                        Envoyer
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-white/10 text-center text-sm text-gray-500">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 Le Dernier Geste (LDG Conseil). Tous droits réservés.</p>
+            <div class="space-x-4">
+                <!-- Lien LinkedIn à mettre à jour -->
+                <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                <a href="https://github.com/ldg-conseil" class="hover:text-white transition-colors">GitHub</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
